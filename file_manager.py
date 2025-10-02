@@ -13,7 +13,8 @@ import sys
 def display_welcome():
     """Display welcome message to the user."""
     print("=" * 50)
-    print("   Welcome to Python CLI File Manager!")
+    print("Welcome to Python CLI File Manager!")
+    print()
     print("=" * 50)
     print("This is a simple file manager to demonstrate")
     print("Python fundamentals: variables, expressions,")
@@ -45,8 +46,8 @@ def calculate_file_size():
         
         # Calculate size in different units
         # TODO: Fix the code below to perform floating point division
-        size_kb = size_bytes // 1024
-        size_mb = size_kb // 1024
+        size_kb = size_bytes / 1024
+        size_mb = size_kb / 1024
         
         # Display results
         print(f"\nFile: {filename}")
@@ -74,17 +75,18 @@ def get_user_choice():
     print()
     
     choice = input("Enter your choice (help/calc/info/quit): ").strip().lower()
+    return choice
     # TODO: Add code to return the choice
 
 
 def display_help():
     """Display help information about available commands."""
     print("\n" + "=" * 40)
-    print("           HELP - Available Commands")
+    print("HELP - Available Commands")
     print("=" * 40)
     print("help  - Display this help message")
     print("calc  - Calculate the size of a file")
-    print("        You'll be prompted to enter a filename")
+    print("You'll be prompted to enter a filename")
     print("info  - Show information about this program")
     print("quit  - Exit the file manager")
     print()
@@ -98,16 +100,16 @@ def display_help():
 def display_info():
     """Display program information."""
     print("\n" + "=" * 40)
-    print("         PROGRAM INFORMATION")
+    print("PROGRAM INFORMATION")
     print("=" * 40)
     print("Program: Python CLI File Manager")
     print("Purpose: Week 1 Python fundamentals practice")
     print("Concepts: Variables, expressions, statements, functions")
     print("Features:")
-    print("  - File size calculation")
-    print("  - Interactive command system")
-    print("  - Help system")
-    print("  - Standard library only")
+    print("- File size calculation")
+    print("- Interactive command system")
+    print("- Help system")
+    print("- Standard library only")
     print()
     print("Author: CS212 Assignment 1")
     print("Python Version:", sys.version.split()[0])
@@ -162,7 +164,8 @@ def main():
     # TODO: Call the function to display the welcome message
     
     # Main command loop
-    # TODO: Initialize a variable to control the loop. Hint set running = True
+    # TODO: Initialize a variable to control the loop. Hint set 
+    running = True
     while running:
         try:
             choice = get_user_choice()
